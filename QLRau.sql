@@ -49,7 +49,7 @@ create table SanPham(	MaSP varchar(10) primary key,
 						MaNCC varchar(10) references NCC(MaNCC) not null,
 						MaLoai varchar(10) references Loai(MaLoai) not null,
 						TenSP nvarchar(50) not null,
-						MoTaSP varchar(100),
+						MoTaSP nvarchar(200),
 						AnhDaiDien  varchar(50),
 						DonGia int,
 						DonViTinh nvarchar(10))
