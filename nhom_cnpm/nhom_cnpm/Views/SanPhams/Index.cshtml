@@ -1,0 +1,84 @@
+﻿@model IEnumerable<nhom_cnpm.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered" style="width:100%" id="example">
+    <thead class="thead-dark">
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Mã nhà cung cấp</th>
+            <th>Mã loại</th>
+            <th>Tên sản phẩm</th>
+            <th>Mô tả sản phẩm</th>
+            <th>Ảnh đại diện</th>
+            <th>Đơn giá</th>
+            <th>Đơn vị tính</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNCC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTaSP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnhDaiDien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonGia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DonViTinh)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#example").dataTable({
+
+                "columns": [
+
+                    { 'data': 'MaSP' },
+                    { 'data': 'MaNCC' },
+                    { 'data': 'MaLoai' },
+                    { 'data': 'TenSP' },
+
+                    { 'data': 'MoTaSP' },
+                    { 'data': 'AnhDaiDien' },
+                    { 'data': 'DonGia' },
+                    { 'data': 'DonViTinh' },
+
+                ],
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            })
+        })
+    </script>
+}
