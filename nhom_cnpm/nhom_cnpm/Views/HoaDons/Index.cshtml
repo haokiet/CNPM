@@ -1,0 +1,86 @@
+﻿@model IEnumerable<nhom_cnpm.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered" style="width:100%" id="example">
+    <thead class="thead-dark">
+        <tr>
+            <th>Số hóa đơn</th>
+            <th>Mã khách hàng</th>
+            <th>Mã nhân viên duyệt</th>
+            <th>Mã nhân viên giao hàng</th>
+            <th>Địa chỉ giao hàng</th>
+            <th>Tình trạng</th>
+            <th>Ngày đặt hàng</th>
+            <th>Ngày giao hàng</th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoHD)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNVDuyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNVGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChiGiaoHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TinhTrang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDatHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayGiaoHang)
+            </td>
+
+
+        </tr>
+    }
+
+</table>
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#example").dataTable({
+
+                "columns": [
+
+                    { 'data': 'SoHD' },
+                    { 'data': 'MaKH' },
+                    { 'data': 'MaNVDuyet' },
+                    { 'data': 'MaNVGiaoHang' },
+
+                    { 'data': 'DiaChiGiaoHang' },
+                    { 'data': 'TinhTrang' },
+                    { 'data': 'NgayDatHang' },
+                    { 'data': 'NgayGiaoHang' },
+
+                ],
+                "dom": 'Bfrtip',
+                "buttons": [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            })
+        })
+    </script>
+}
