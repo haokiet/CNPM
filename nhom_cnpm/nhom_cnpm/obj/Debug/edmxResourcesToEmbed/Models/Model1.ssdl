@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="QLRauModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6013: The table/view 'QLRau.dbo.CTHoaDon' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CTHoaDon">
-          <Property Name="SoHD" Type="varchar" MaxLength="10" />
-          <Property Name="MaSP" Type="varchar" MaxLength="10" />
-          <Property Name="SoLuong" Type="int" />
-          <Property Name="DonGia" Type="int" />
-        </EntityType>-->
   <EntityType Name="HoaDon">
     <Key>
       <PropertyRef Name="SoHD" />
@@ -75,7 +67,7 @@ warning 6013: The table/view 'QLRau.dbo.CTHoaDon' does not have a primary key de
     <Property Name="MaNCC" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MaLoai" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="TenSP" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="MoTaSP" Type="varchar" MaxLength="100" />
+    <Property Name="MoTaSP" Type="nvarchar" MaxLength="200" />
     <Property Name="AnhDaiDien" Type="varchar" MaxLength="50" />
     <Property Name="DonGia" Type="int" />
     <Property Name="DonViTinh" Type="nvarchar" MaxLength="10" />
@@ -90,13 +82,7 @@ warning 6013: The table/view 'QLRau.dbo.CTHoaDon' does not have a primary key de
     <Property Name="GiaTri" Type="int" />
     <Property Name="TinhTrang" Type="bit" />
   </EntityType>
-  <!--Errors Found During Generation:
-error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__CTHoaDon__MaSP__49C3F6B7" />-->
-  <!--Errors Found During Generation:
-error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but cannot be found.
-        <Association Name="FK__CTHoaDon__SoHD__48CFD27E" />-->
-  <Association Name="FK__HoaDon__MaKH__412EB0B6">
+  <Association Name="FK__HoaDon__MaKH__2E1BDC42">
     <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -108,7 +94,7 @@ error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDon__MaNVDuye__4222D4EF">
+  <Association Name="FK__HoaDon__MaNVDuye__2F10007B">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -120,7 +106,7 @@ error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDon__MaNVGiao__4316F928">
+  <Association Name="FK__HoaDon__MaNVGiao__300424B4">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -132,7 +118,7 @@ error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__MaLoai__46E78A0C">
+  <Association Name="FK__SanPham__MaLoai__33D4B598">
     <End Role="Loai" Type="Self.Loai" Multiplicity="1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
     <ReferentialConstraint>
@@ -144,7 +130,7 @@ error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but 
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__SanPham__MaNCC__45F365D3">
+  <Association Name="FK__SanPham__MaNCC__32E0915F">
     <End Role="NCC" Type="Self.NCC" Multiplicity="1" />
     <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
     <ReferentialConstraint>
@@ -164,23 +150,23 @@ error 6004: The table 'QLRau.dbo.CTHoaDon' is referenced by a relationship, but 
     <EntitySet Name="NhanVien" EntityType="Self.NhanVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SanPham" EntityType="Self.SanPham" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ThamSo" EntityType="Self.ThamSo" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__HoaDon__MaKH__412EB0B6" Association="Self.FK__HoaDon__MaKH__412EB0B6">
+    <AssociationSet Name="FK__HoaDon__MaKH__2E1BDC42" Association="Self.FK__HoaDon__MaKH__2E1BDC42">
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDon__MaNVDuye__4222D4EF" Association="Self.FK__HoaDon__MaNVDuye__4222D4EF">
+    <AssociationSet Name="FK__HoaDon__MaNVDuye__2F10007B" Association="Self.FK__HoaDon__MaNVDuye__2F10007B">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDon__MaNVGiao__4316F928" Association="Self.FK__HoaDon__MaNVGiao__4316F928">
+    <AssociationSet Name="FK__HoaDon__MaNVGiao__300424B4" Association="Self.FK__HoaDon__MaNVGiao__300424B4">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaLoai__46E78A0C" Association="Self.FK__SanPham__MaLoai__46E78A0C">
+    <AssociationSet Name="FK__SanPham__MaLoai__33D4B598" Association="Self.FK__SanPham__MaLoai__33D4B598">
       <End Role="Loai" EntitySet="Loai" />
       <End Role="SanPham" EntitySet="SanPham" />
     </AssociationSet>
-    <AssociationSet Name="FK__SanPham__MaNCC__45F365D3" Association="Self.FK__SanPham__MaNCC__45F365D3">
+    <AssociationSet Name="FK__SanPham__MaNCC__32E0915F" Association="Self.FK__SanPham__MaNCC__32E0915F">
       <End Role="NCC" EntitySet="NCC" />
       <End Role="SanPham" EntitySet="SanPham" />
     </AssociationSet>

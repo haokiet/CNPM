@@ -75,7 +75,7 @@
     <Property Name="MaNCC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="MaLoai" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="TenSP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="MoTaSP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="MoTaSP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="AnhDaiDien" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="DonGia" Type="Int32" />
     <Property Name="DonViTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
