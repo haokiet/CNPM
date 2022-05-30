@@ -485,7 +485,6 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="webfonts\fa-brands-400.svg" />
@@ -513,6 +512,9 @@
     <Content Include="Views\HoaDons\Details.cshtml" />
     <Content Include="Views\HoaDons\Edit.cshtml" />
     <Content Include="Views\HoaDons\Index.cshtml" />
+    <Content Include="Views\HoaDons\XuatHoaDon.cshtml" />
+    <Content Include="Views\SanPhams\XuatSanPham.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

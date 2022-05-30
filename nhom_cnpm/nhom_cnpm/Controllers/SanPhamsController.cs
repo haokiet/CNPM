@@ -13,6 +13,11 @@ namespace nhom_cnpm.Controllers
     public class SanPhamsController : Controller
     {
         private QLRauEntities db = new QLRauEntities();
+        public ActionResult XuatSanPham()
+        {
+            var sanPhams = db.SanPhams.Include(s => s.Loai).Include(s => s.NCC);
+            return View(sanPhams.ToList());
+        }
 
         // GET: SanPhams
         public ActionResult Index()
